@@ -38,7 +38,7 @@ const noImageError = () =>
     messageColor: 'white',
     messageSize: '16px',
     backgroundColor: '#ef4040',
-    iconUrl: '/img/error.svg',
+    iconUrl: '/src/img/error.svg',
     iconColor: 'white',
     position: 'topRight',
     maxWidth: '432px',

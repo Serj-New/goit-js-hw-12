@@ -150,7 +150,7 @@ const enterTag = () =>
         messageColor: 'white',
         messageSize: '16px',
         backgroundColor: '#ef4040',
-        iconUrl: './img/error.svg',
+        iconUrl: '/src/img/error.svg',
         iconColor: 'white',
         position: 'topRight',
     });
@@ -163,7 +163,7 @@ const noImages = () =>
         messageColor: 'white',
         messageSize: '16px',
         backgroundColor: '#ef4040',
-        iconUrl: './img/error.svg',
+        iconUrl: '/src/img/error.svg',
         iconColor: 'white',
         position: 'topRight',
     });
@@ -176,7 +176,7 @@ const oopsError = () =>
         messageColor: 'white',
         messageSize: '16px',
         backgroundColor: '#ef4040',
-        iconUrl: './img/error.svg',
+        iconUrl: '/src/img/error.svg',
         iconColor: 'white',
         position: 'topRight',
     });
