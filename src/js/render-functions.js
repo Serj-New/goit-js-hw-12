@@ -7,6 +7,12 @@ const refs = {
     imageElem: document.querySelector('.gallery'),
 };
 
+const gallery = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionDelay: 250,
+    captionsData: 'alt',
+  });
+
 export default function renderImages(pictures) {
     const markup = pictures
     .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
@@ -24,12 +30,6 @@ export default function renderImages(pictures) {
     .join('');
 
     refs.imageElem.insertAdjacentHTML('beforeend', markup);
-    const gallery = new SimpleLightbox('.gallery a', {
-        captions: true,
-        captionDelay: 250,
-        captionsData: 'alt',
-      });
-      
-    
+
     gallery.refresh();
 };

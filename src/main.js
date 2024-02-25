@@ -108,6 +108,7 @@ init();
 
 function showImages(images) {
     const markup = renderImages(images);
+    showLoadBtn();
 }
 
 // loader, more btn ======================================
@@ -132,8 +133,6 @@ function checkBtnVisibleStatus() {
     if (page >= maxPage) {
       hideLoadBtn();
       endAlert();
-    } else {
-      showLoadBtn();
     }
 }
 
