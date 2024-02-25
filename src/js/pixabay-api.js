@@ -12,8 +12,8 @@ export async function getImages(userImgTag, currentPage) {
   const url = `${BASE_URL}${API_KEY}${END_POINT}`;
 
   const params = {
-    per_page: 15,
     page: currentPage,
+    per_page: 15
   }
 
   try {

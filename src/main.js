@@ -31,7 +31,6 @@ async function onSearchImg(evt) {
 
     if (userImgTag === '') {
         enterTag();
-        return [];
     } else {
         showLoader();
     };
@@ -46,6 +45,7 @@ async function onSearchImg(evt) {
         refs.imageElem.innerHTML = '';
         showImages(data.hits);
     } catch (error) {
+        console.log(error.message);
         oopsError();
     }
 
@@ -75,6 +75,11 @@ async function onLoadMoreClick() {
   }
 
 // вводим данные, сохраняем в локал сторедж и достаем их оттуда, если закрылась страница =================================
+
+function saveToLS(key, value) {
+    const archive = JSON.stringify(value);
+    localStorage.setItem(key, archive);
+}
 
 function onFormInput() {
   const tag = refs.imgTagInput.value.trim();

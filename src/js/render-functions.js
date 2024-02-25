@@ -7,8 +7,8 @@ const refs = {
     imageElem: document.querySelector('.gallery'),
 };
 
-export default function renderImages(images) {
-    const markup = images
+export default function renderImages(pictures) {
+    const markup = pictures
     .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
         `<li class="gallery-item">
             <a href="${largeImageURL}">
