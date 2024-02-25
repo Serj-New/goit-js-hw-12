@@ -31,6 +31,7 @@ async function onSearchImg(evt) {
 
     if (userImgTag === '') {
         enterTag();
+        return false;
     } else {
         showLoader();
     };
