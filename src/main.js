@@ -1,6 +1,6 @@
 'use strict';
 
-import { getImages } from './js/pixabay-api';
+import getImages from './js/pixabay-api';
 import renderImages from './js/render-functions';
 
 import iziToast from "izitoast";
@@ -37,16 +37,12 @@ async function onSearchImg(evt) {
 
     try {
         const data = await getImages(userImgTag, page);
-        if (data.totalHits === 0) {
-            noImages();
-        };
         maxPage = Math.ceil(data.totalHits / 15);
 
         refs.imageElem.innerHTML = '';
         showImages(data.hits);
     } catch (error) {
         console.log(error.message);
-        oopsError();
     }
 
     localStorage.removeItem(STORAGE_KEY);
@@ -150,33 +146,7 @@ const enterTag = () =>
         messageColor: 'white',
         messageSize: '16px',
         backgroundColor: '#ef4040',
-        iconUrl: '/src/img/error.svg',
-        iconColor: 'white',
-        position: 'topRight',
-    });
-
-const noImages = () =>
-    iziToast.error({
-        message: 'Sorry, no images found',
-        titleColor: 'white',
-        titleSize: '16px',
-        messageColor: 'white',
-        messageSize: '16px',
-        backgroundColor: '#ef4040',
-        iconUrl: '/src/img/error.svg',
-        iconColor: 'white',
-        position: 'topRight',
-    });
-
-const oopsError = () =>
-    iziToast.error({
-        message: 'Oops...',
-        titleColor: 'white',
-        titleSize: '16px',
-        messageColor: 'white',
-        messageSize: '16px',
-        backgroundColor: '#ef4040',
-        iconUrl: '/src/img/error.svg',
+        iconUrl: '/img/error.svg',
         iconColor: 'white',
         position: 'topRight',
     });

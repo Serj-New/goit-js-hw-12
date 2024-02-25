@@ -5,7 +5,7 @@ import axios from "axios";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-export async function getImages(userImgTag, currentPage) {
+export default async function getImages(userImgTag, currentPage) {
   const API_KEY = `?key=42244518-9742bcd26a7acdceb08ce98f6`;
   const BASE_URL = 'https://pixabay.com/api/';
   const END_POINT = `&q=${userImgTag}&image_type=photo&orientation=horizontal&safesearch=true`;
