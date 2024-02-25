@@ -29,6 +29,7 @@ export default function renderImages(pictures) {
         captionDelay: 250,
         captionsData: 'alt',
       });
+      
     
     gallery.refresh();
 };

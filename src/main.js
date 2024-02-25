@@ -61,18 +61,16 @@ async function onLoadMoreClick() {
     const data = await getImages(userImgTag, page);
     showImages(data.hits);
 
+    hideLoader();
+    checkBtnVisibleStatus();
   
-    const height =
-      refs.imageElem.firstElementChild.getBoundingClientRect().height;
+    const height = refs.imageElem.firstElementChild.getBoundingClientRect().height;
   
     scrollBy({
       behavior: 'smooth',
-      top: 10,
+      top: height * 2,
     });
-    
-    hideLoader();
-    checkBtnVisibleStatus();
-  }
+}
 
 // вводим данные, сохраняем в локал сторедж и достаем их оттуда, если закрылась страница =================================
 
@@ -113,7 +111,6 @@ init();
 
 function showImages(images) {
     const markup = renderImages(images);
-    refs.imageElem.insertAdjacentHTML('beforeend', markup);
 }
 
 // loader, more btn ======================================
@@ -137,6 +134,7 @@ function hideLoader() {
 function checkBtnVisibleStatus() {
     if (page >= maxPage) {
       hideLoadBtn();
+      endAlert();
     } else {
       showLoadBtn();
     }
@@ -181,4 +179,11 @@ const oopsError = () =>
         iconUrl: './img/error.svg',
         iconColor: 'white',
         position: 'topRight',
+    });
+
+const endAlert = () =>
+    iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+        messageSize: '16px',
+        position: 'bottomCenter',
     });
